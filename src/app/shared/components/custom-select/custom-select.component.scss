@@ -1,0 +1,73 @@
+.custom-select {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    border: 2px solid #DBDBDB;
+    border-radius: 4px;
+    user-select: none;
+
+    &--expanded {
+        border: 2px solid #3366FF;
+    }
+
+    &__input {
+        padding: 10px 50px 10px 10px;
+        font-size: 16px;
+        cursor: pointer;
+
+        &__icon {
+            padding-right: 20px;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            pointer-events: none;
+            transform: translateY(-50%) rotate(180deg); /* Rotación inicial */
+            background-image: url(/assets/icons/chevron-unfocused.svg);
+            background-position: right center;
+            background-repeat: no-repeat;
+            fill: #333333;
+            &--expanded {
+                transform: translateY(-50%) translateX(-50%) rotate(0deg);
+                background-image: url(/assets/icons/chevron-focused.svg);
+            }
+        }
+    }
+    &__options {
+        width: 100%;
+        border-radius: 4px; 
+        margin-top: 2px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+        &--selected {
+            background-color: #3366FF;
+        }
+        &--selected:hover {
+        background-color: #3366FF;
+        }
+        &__option {
+            padding: 10px;
+            cursor: pointer;
+        }
+        &__option:hover {
+            background-color: #f0f0f0;
+        }
+        &__icon {
+            padding-right: 20px;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right: 17px;
+            pointer-events: none;
+            background-image: url(/assets/icons/check.svg);
+            background-position: right center;
+            background-repeat: no-repeat;
+        }
+    }
+}

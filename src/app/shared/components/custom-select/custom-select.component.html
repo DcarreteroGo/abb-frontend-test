@@ -1,0 +1,12 @@
+<div class="custom-select" outsideClick [ngClass]="{'custom-select--expanded': showOptions}" [element]="'.custom-select__input'" [showing]="showOptions" (clickOutside)="toggleOptions($event)">
+    <div class="custom-select__input">
+        {{ selectedOption ||options[0] }}
+        <span class="custom-select__input__icon" [ngClass]="{'custom-select__input__icon--expanded': showOptions}"></span>
+    </div>
+    <div class="custom-select__options" *ngIf="showOptions">
+        <div class="custom-select__options__option" [ngClass]="{'custom-select__options--selected': selectedOption === option}" *ngFor="let option of options" (click)="onSelect(option)">
+        {{ option }}
+        <span class="custom-select__options__icon" *ngIf="selectedOption === option"></span>
+        </div>
+    </div>
+</div>
